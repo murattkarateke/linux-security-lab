@@ -178,6 +178,20 @@ Bu proje aşağıdaki gerçek dünya becerilerini gösterir:
 
 ---
 
-## 👤 Author
+## 📸 Screenshots
 
-**Murat Karatek
+### 🔐 SSH Connection
+![SSH Connection](screenshots/ssh-connection.png)
+
+### 🌐 Nmap Scan
+![Nmap Scan](screenshots/nmap-scan.png)
+
+### 🚨 Attack Logs
+![Attack Logs](screenshots/attack-logs.png)
+
+### 🛡️ Fail2Ban Protection
+![Fail2Ban](screenshots/fail2ban-protection.png)
+
+
+## 👤 Author
+**Murat Karateke
