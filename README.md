@@ -1,156 +1,54 @@
 # 🔐 Linux Security Lab
 
----
-
 ## 🚀 Overview (EN)
 
-This project demonstrates real-world Linux security operations including SSH log analysis, brute-force attack detection, and automated intrusion prevention.
+This project demonstrates real-world Linux security operations including SSH brute-force attack simulation, log analysis, and automated intrusion prevention.
 
-The lab simulates attacker behavior and shows how to detect and mitigate it using industry-standard tools.
+The lab replicates attacker behavior and shows how to detect, analyze, and mitigate unauthorized access using industry-standard tools.
 
 ---
 
 ## 🚀 Proje Özeti (TR)
 
-Bu proje, gerçek dünyaya yakın senaryolarla Linux güvenliği, SSH log analizi ve saldırı tespiti üzerine yapılmıştır.
+Bu proje, gerçek dünya senaryolarına yakın şekilde Linux güvenliği, SSH brute-force saldırı simülasyonu, log analizi ve otomatik saldırı engelleme süreçlerini göstermektedir.
 
-Saldırgan davranışı simüle edilerek sistemde nasıl tespit ve engelleme yapılacağı gösterilmiştir.
-
----
-
-## 🧠 Key Skills / Kazanılan Beceriler
-
-### EN
-- Log Analysis (auth.log)
-- Brute-force Attack Detection
-- Attacker IP Extraction
-- Intrusion Prevention (Fail2Ban)
-- Network Scanning (Nmap)
-- Linux System Hardening
-
-### TR
-- Log analizi (auth.log)
-- Brute-force saldırı tespiti
-- Saldırgan IP adresi çıkarma
-- Fail2Ban ile saldırı engelleme
-- Nmap ile port tarama
-- Linux sistem güvenliği
+Saldırgan davranışı simüle edilerek sistem üzerinde nasıl tespit ve önleme yapılacağı gösterilmiştir.
 
 ---
 
-## ⚔️ Attack Simulation (EN)
+## 🏆 Key Achievements
 
-Simulated unauthorized SSH login attempts:
-
-bash ssh fakeuser@<server-ip> 
-
-### Result:
-- Multiple failed login attempts generated
-- Logged in /var/log/auth.log
-- Detected and analyzed successfully
+- Detected multiple SSH brute-force attack attempts  
+- Identified attacker IP addresses via log analysis  
+- Implemented Fail2Ban to automatically block malicious IPs  
+- Secured SSH access against unauthorized login attempts  
 
 ---
 
-## ⚔️ Saldırı Simülasyonu (TR)
+## 🏆 Öne Çıkan Başarılar
 
-Yetkisiz SSH giriş denemeleri simüle edildi:
-
-bash ssh fakeuser@<server-ip> 
-
-### Sonuç:
-- Birden fazla başarısız giriş denemesi üretildi
-- /var/log/auth.log içine kaydedildi
-- Başarıyla analiz edildi
+- SSH brute-force saldırıları başarıyla tespit edildi  
+- Log analizi ile saldırgan IP adresleri belirlendi  
+- Fail2Ban ile otomatik IP engelleme sistemi kuruldu  
+- SSH erişimi güvenli hale getirildi  
 
 ---
 
-## 🔍 Log Analysis (EN)
+## 🌍 Real World Impact
 
-bash sudo grep "Failed password" /var/log/auth.log 
-
-Extract attacker IPs:
-
-bash sudo grep "Failed password" /var/log/auth.log | awk '{print $11}' | sort | uniq -c | sort -nr 
+This project simulates real-world attack scenarios and demonstrates how system administrators detect and prevent unauthorized access on Linux servers.
 
 ---
 
-## 🔍 Log Analizi (TR)
+## 🌍 Gerçek Dünya Etkisi
 
-bash sudo grep "Failed password" /var/log/auth.log 
-
-Saldırgan IP adreslerini çıkarma:
-
-bash sudo grep "Failed password" /var/log/auth.log | awk '{print $11}' | sort | uniq -c | sort -nr 
+Bu proje, gerçek dünya saldırı senaryolarını simüle ederek Linux sunucularda yetkisiz erişimin nasıl tespit ve engellendiğini göstermektedir.
 
 ---
 
-## 🛡️ Intrusion Prevention (Fail2Ban)
+## 🛠️ Technologies Used
 
-bash sudo apt install fail2ban -y sudo systemctl start fail2ban sudo fail2ban-client status sshd 
-
-### Result:
-- Malicious IPs automatically banned
-- Real-time protection enabled
-
----
-
-## 🛡️ Saldırı Engelleme (Fail2Ban)
-
-bash sudo apt install fail2ban -y sudo systemctl start fail2ban sudo fail2ban-client status sshd 
-
-### Sonuç:
-- Zararlı IP’ler otomatik engellendi
-- Gerçek zamanlı koruma sağlandı
-
----
-
-## 🌐 Network Scanning (EN)
-
-bash nmap -p 22,80,443 <target-ip> 
-
-### Result:
-- Open ports detected
-- Attack surface analyzed
-
----
-
-## 🌐 Ağ Taraması (TR)
-
-bash nmap -p 22,80,443 <target-ip> 
-
-### Sonuç:
-- Açık portlar tespit edildi
-- Sistem yüzeyi analiz edildi
-
----
-
-## 📸 Screenshots
-
-### SSH Attack Logs
-ssh-log
-
-### Fail2Ban Protection
-fail2ban
-
----
-
-## 📊 Results / Sonuçlar
-
-### EN
-- 30+ failed login attempts detected  
-- Multiple attacker IPs identified  
-- 8 IP addresses automatically banned  
-
-### TR
-- 30+ başarısız giriş denemesi tespit edildi  
-- Saldırgan IP adresleri çıkarıldı  
-- 8 IP otomatik olarak engellendi  
-
----
-
-## 🧰 Technologies Used
-
-- Ubuntu Server  
+- Ubuntu Server (AWS EC2)  
 - SSH  
 - Fail2Ban  
 - Nmap  
@@ -158,9 +56,50 @@ fail2ban
 
 ---
 
-## 🎯 Why This Project Matters (EN)
+## 🧪 Lab Steps
 
-This project demonstrates real-world SOC / Blue Team skills, including:
+1. Connected to remote Linux server via SSH  
+2. Scanned open ports using Nmap  
+3. Simulated brute-force login attempts  
+4. Analyzed /var/log/auth.log for failed logins  
+5. Detected attacker IP addresses  
+6. Configured Fail2Ban to block malicious activity  
+
+---
+
+## 📊 Results
+
+### EN
+- 30+ failed login attempts detected  
+- Multiple attacker IP addresses identified  
+- 8 IP addresses automatically banned using Fail2Ban  
+
+### TR
+- 30+ başarısız giriş denemesi tespit edildi  
+- Birden fazla saldırgan IP adresi belirlendi  
+- Fail2Ban ile 8 IP otomatik olarak engellendi  
+
+---
+
+## 📸 Screenshots
+
+### 🔐 SSH Connection
+SSH Connection
+
+### 🌐 Nmap Scan
+Nmap Scan
+
+### 🚨 Attack Logs
+Attack Logs
+
+### 🛡️ Fail2Ban Protection
+Fail2Ban
+
+---
+
+## 📌 Why This Project Matters (EN)
+
+This project demonstrates practical SOC / Blue Team skills:
 
 - Incident detection  
 - Log investigation  
@@ -168,9 +107,9 @@ This project demonstrates real-world SOC / Blue Team skills, including:
 
 ---
 
-## 🎯 Bu Proje Neden Önemli (TR)
+## 📌 Bu Proje Neden Önemli (TR)
 
-Bu proje aşağıdaki gerçek dünya becerilerini gösterir:
+Bu proje aşağıdaki gerçek dünya güvenlik becerilerini göstermektedir:
 
 - Olay tespiti  
 - Log analizi  
@@ -178,20 +117,6 @@ Bu proje aşağıdaki gerçek dünya becerilerini gösterir:
 
 ---
 
-## 📸 Screenshots
-
-### 🔐 SSH Connection
-![SSH Connection](screenshots/ssh-connection.png)
-
-### 🌐 Nmap Scan
-![Nmap Scan](screenshots/nmap-scan.png)
-
-### 🚨 Attack Logs
-![Attack Logs](screenshots/attack-logs.png)
-
-### 🛡️ Fail2Ban Protection
-![Fail2Ban](screenshots/fail2ban-protection.png)
-
-
 ## 👤 Author
-**Murat Karateke
+
+*Murat Karateke
