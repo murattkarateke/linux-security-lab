@@ -6,7 +6,7 @@
 
 ## 🚀 Overview (EN)
 
-This project demonstrates real-world Linux security operations, including SSH brute-force attack simulation, log analysis, and automated intrusion prevention.
+This project demonstrates real-world Linux security operations including SSH brute-force attack simulation, log analysis, and automated intrusion prevention.
 
 The lab replicates attacker behavior and shows how to detect, analyze, and mitigate unauthorized access using industry-standard tools.
 
@@ -76,36 +76,36 @@ Bu proje, gerçek dünya saldırı senaryolarını simüle ederek Linux sunucula
 ### EN
 Brute-force SSH login attempts were simulated to generate failed login logs.
 
-bash ssh fakeuser@<server-ip> 
+bash id="f0l3y7" ssh fakeuser@<server-ip> 
 
 ### TR
 Başarısız giriş logları oluşturmak için SSH brute-force saldırı denemeleri simüle edilmiştir.
 
-bash id="cyr63y" ssh fakeuser@<server-ip> 
+bash id="3f7h2v" ssh fakeuser@<server-ip> 
 
 ---
 
 ## 🔍 Log Analysis
 
-bash id="n9o6a3" sudo grep "Failed password" /var/log/auth.log 
+bash id="w6g8y1" sudo grep "Failed password" /var/log/auth.log 
 
 Extract attacker IP addresses:
 
-bash id="b3x8lc" sudo grep "Failed password" /var/log/auth.log | awk '{print $11}' | sort | uniq -c | sort -nr 
+bash id="2j7m4s" sudo grep "Failed password" /var/log/auth.log | awk '{print $11}' | sort | uniq -c | sort -nr 
 
 ### Example Output
 
-bash id="gxh0e8" Failed password for invalid user fakeuser from 192.168.x.x port xxxx ssh2 
+bash id="9d1h3k" Failed password for invalid user fakeuser from 192.168.x.x port xxxx ssh2 
 
 ---
 
 ## 🛡️ Intrusion Prevention (Fail2Ban)
 
-bash id="s3b1x4" sudo apt install fail2ban -y sudo systemctl start fail2ban sudo fail2ban-client status sshd 
+bash id="8p4k1q" sudo apt install fail2ban -y sudo systemctl start fail2ban sudo fail2ban-client status sshd 
 
 ### ⚙️ Fail2Ban Configuration
 
-bash id="7t4gph" [sshd] enabled = true port = 22 filter = sshd logpath = /var/log/auth.log maxretry = 5 bantime = 600 
+bash id="7m2z9c" [sshd] enabled = true port = 22 filter = sshd logpath = /var/log/auth.log maxretry = 5 bantime = 600 
 
 ### EN
 Configured to automatically ban IPs after multiple failed attempts.
@@ -117,7 +117,7 @@ Belirli sayıda başarısız giriş sonrası IP’leri otomatik engelleyecek şe
 
 ## 🌐 Network Scanning
 
-bash id="k1zv3y" nmap -p 22,80,443 <target-ip> 
+bash id="3x9v8l" nmap -p 22,80,443 <target-ip> 
 
 ---
 
@@ -171,15 +171,37 @@ Fail2Ban
 
 ---
 
-## 📌 Why This Project Matters (EN)
+## ⚠️ Limitations
 
-This project demonstrates practical SOC / Blue Team skills including incident detection, log investigation, and threat mitigation.
+### EN
+- Simulation performed in a controlled lab environment  
+- Limited to SSH-based attacks  
+- Not a full SIEM solution  
+
+### TR
+- Kontrollü bir lab ortamında yapılmıştır  
+- Sadece SSH saldırılarına odaklanır  
+- Tam kapsamlı bir SIEM çözümü değildir  
 
 ---
 
-## 📌 Bu Proje Neden Önemli (TR)
+## 🚀 Future Improvements
 
-Bu proje gerçek dünya güvenlik becerlerini gösterir: olay tespiti, log analizi ve tehdit engelleme.
+### EN
+- Integrate real-time log monitoring and alerting  
+- Develop a Python-based log parser  
+- Expand detection to web-based attacks  
+
+### TR
+- Gerçek zamanlı log izleme ve alarm sistemi ekleme  
+- Python ile log analiz scripti geliştirme  
+- Web saldırılarını kapsayacak şekilde genişletme  
+
+---
+
+## 🔗 Project Link
+
+GitHub: https://github.com/murattkarateke/linux-security-lab
 
 ---
 
