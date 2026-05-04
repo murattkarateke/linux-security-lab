@@ -135,6 +135,64 @@ bash id="3x9v8l" nmap -p 22,80,443 <target-ip>
 
 ---
 
+## 🔍 Log Analysis Example | Log Analizi Örneği
+
+bash id="u3c8ax" cat /var/log/auth.log | grep "Failed password" 
+
+---
+
+## 📊 Suspicious Activity | Şüpheli Aktivite
+
+bash id="4qz2y1" Failed password for invalid user admin from 192.168.1.101 port 22 ssh2 Failed password for root from 192.168.1.101 port 22 ssh2 
+
+---
+
+## 🧠 Detection Logic | Tespit Mantığı
+
+### 🇬🇧 English
+- Multiple failed SSH login attempts detected in /var/log/auth.log
+- Repeated authentication failures from the same source IP address
+- Pattern indicates a potential brute force attack
+- Behavior flagged for further defensive action
+
+### 🇹🇷 Türkçe
+- /var/log/auth.log içinde çoklu başarısız SSH giriş denemeleri tespit edildi
+- Aynı IP adresinden tekrar eden başarısız girişler gözlemlendi
+- Bu davranış brute force saldırı ihtimalini göstermektedir
+- İleri savunma aksiyonları için işaretlendi
+
+---
+
+## 🎯 Outcome | Sonuç
+
+### 🇬🇧 English
+- Suspicious IP successfully identified
+- Attack pattern recognized through log analysis
+- System prepared for defensive response (e.g., Fail2Ban)
+
+### 🇹🇷 Türkçe
+- Şüpheli IP başarıyla tespit edildi
+- Log analizi ile saldırı paterni belirlendi
+- Sistem savunma aksiyonlarına hazır hale getirildi (örneğin Fail2Ban)
+
+---
+
+## 🧠 Project Value | Proje Değeri
+
+### 🇬🇧 English
+This project demonstrates:
+- Practical log analysis skills
+- Threat detection using system logs
+- Understanding of attack patterns
+- Security monitoring mindset
+
+### 🇹🇷 Türkçe
+Bu proje aşağıdaki konularda yetkinlik kazandırır:
+- Pratik log analizi becerisi
+- Sistem logları ile tehdit tespiti
+- Saldırı paternlerini anlama
+- Güvenlik izleme bakışı
+
 ## 📸 Screenshots
 
 These screenshots provide evidence of real-world attack simulation and defense mechanisms.
